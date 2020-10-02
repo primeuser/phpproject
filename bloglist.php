@@ -1,25 +1,39 @@
 <?php 
-
-include 'includes/header.php'
-
+include_once 'config/db_conn.php';
+include 'includes/header.php';
 ?>
 
-<br>
-<br>
-<br>
-<br><br>
-<br><br>
-<br>
-<h3> This is the blog list of web page and here lies the main content.</h3>
+<h3><a href="addblog.php">Create New Blog</a></h3>
+<?php
+$sqlquery = "SELECT * FROM blog;";
+$data = mysqli_query($conn, $sqlquery);
 
-<br>
-<br><br>
-<br><br>
-<br><br>
-<br>
+foreach ($data as $unitdata): ?>
+	<h5>Blog id : 
+		<?php
+		echo $unitdata['id']; ?> 
+	</h5>
+	<h1>
+		<?php
+		echo $unitdata['title']; ?> 
+	</h1>
+	<p>
+		<?php
+		echo $unitdata['details']; ?> 
+	</p>
+	<a href="#">Read More</a>
+
+<?php endforeach ; ?>
+
+
+
+
 
 <?php 
  
+
+
+
  include 'includes/footer.php'
 
 ?>
