@@ -19,7 +19,7 @@ foreach ($data as $unitdata): ?>
 	</h1>
 	<p>
 		<?php
-		echo $unitdata['details']; ?> 
+		echo $unitdata['content']; ?> 
 	</p>
 	<a href="#">Read More</a>
 
